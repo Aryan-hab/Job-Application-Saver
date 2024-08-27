@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .forms import JobListingForm
 
+
 def create_job_listing(request):
     success_message = None  # Initialize success_message
     if request.method == 'POST':
