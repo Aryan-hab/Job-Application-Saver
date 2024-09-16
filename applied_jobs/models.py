@@ -11,12 +11,12 @@ statuses = [
 
 
 class Job(models.Model):
-    company_name = models.CharField(max_length=30, null=False, blank=False)
-    title = models.CharField(max_length=30, null=False, blank=False)
+    company_name = models.CharField(max_length=256, null=False, blank=False)
+    title = models.CharField(max_length=256, null=False, blank=False)
     location = models.ForeignKey(City, on_delete=models.PROTECT, null=True, blank=True)
-    platform = models.CharField(max_length=30, null=True, blank=False)
+    platform = models.CharField(max_length=256, null=True, blank=False)
     application_date = models.DateTimeField(auto_now_add=False)
-    status = models.CharField(max_length=30, null=False, blank=False, choices=statuses, default='PE')
+    status = models.CharField(max_length=32, null=False, blank=False, choices=statuses, default='PE')
     description = models.TextField(blank=False, null=False)
 
     def __str__(self):
